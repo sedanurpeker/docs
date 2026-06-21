@@ -1,0 +1,1518 @@
+{
+  "generated_at": "2026-06-21T00:00:00Z",
+  "summary": {
+    "city_count": 21,
+    "total_videos": 63,
+    "total_people": 2909,
+    "top_city": "Hatay",
+    "gamma": 0.5
+  },
+  "cities": [
+    {
+      "city": "Hatay",
+      "lat": 36.4018,
+      "lon": 36.3498,
+      "region": "Akdeniz",
+      "plate": 31,
+      "area": 5524,
+      "population": 1577531,
+      "altitude": 89,
+      "unique_people": 146,
+      "total_faces": 146,
+      "total_people": 198,
+      "analyzed": 146,
+      "filtered_out": 52,
+      "video_count": 3,
+      "gra_score": 0.7495,
+      "dominant_emotion": "neutral",
+      "dominant_counts": {
+        "neutral": 61,
+        "happy": 30,
+        "sad": 29,
+        "angry": 13,
+        "fear": 11,
+        "surprise": 2
+      },
+      "dayparts": [
+        {
+          "period": "morning",
+          "happy": 0.127,
+          "sad": 0.2108,
+          "neutral": 0.4322
+        },
+        {
+          "period": "afternoon",
+          "happy": 0.286,
+          "sad": 0.185,
+          "neutral": 0.359
+        },
+        {
+          "period": "evening",
+          "happy": 0.21,
+          "sad": 0.194,
+          "neutral": 0.38
+        }
+      ],
+      "emotions": {
+        "happy": 20.58,
+        "sad": 19.93,
+        "angry": 9.06,
+        "fear": 7.45,
+        "disgust": 0.11,
+        "surprise": 1.23,
+        "neutral": 41.64
+      }
+    },
+    {
+      "city": "Antalya",
+      "lat": 36.8841,
+      "lon": 30.7056,
+      "region": "Akdeniz",
+      "plate": 7,
+      "area": 20591,
+      "population": 2688004,
+      "altitude": 56,
+      "unique_people": 92,
+      "total_faces": 92,
+      "total_people": 92,
+      "analyzed": 92,
+      "filtered_out": 3024,
+      "video_count": 3,
+      "gra_score": 0.7317,
+      "dominant_emotion": "neutral",
+      "dominant_counts": {
+        "happy": 22,
+        "sad": 19,
+        "angry": 10,
+        "fear": 8,
+        "neutral": 33
+      },
+      "dayparts": [
+        {
+          "period": "morning",
+          "happy": 0.1847,
+          "sad": 0.2298,
+          "neutral": 0.3858
+        },
+        {
+          "period": "afternoon",
+          "happy": 0.3268,
+          "sad": 0.1888,
+          "neutral": 0.3385
+        },
+        {
+          "period": "evening",
+          "happy": 0.2487,
+          "sad": 0.199,
+          "neutral": 0.3603
+        }
+      ],
+      "emotions": {
+        "happy": 23.68,
+        "sad": 20.52,
+        "angry": 10.46,
+        "fear": 8.63,
+        "disgust": 0.06,
+        "surprise": 0.24,
+        "neutral": 36.39
+      }
+    },
+    {
+      "city": "Konya",
+      "lat": 37.8715,
+      "lon": 32.4846,
+      "region": "İç Anadolu",
+      "plate": 42,
+      "area": 40814,
+      "population": 2320832,
+      "altitude": 1016,
+      "unique_people": 73,
+      "total_faces": 73,
+      "total_people": 73,
+      "analyzed": 73,
+      "filtered_out": 2540,
+      "video_count": 3,
+      "gra_score": 0.6609,
+      "dominant_emotion": "neutral",
+      "dominant_counts": {
+        "happy": 15,
+        "sad": 14,
+        "angry": 15,
+        "fear": 4,
+        "surprise": 1,
+        "neutral": 24
+      },
+      "dayparts": [
+        {
+          "period": "morning",
+          "happy": 0.1576,
+          "sad": 0.2167,
+          "neutral": 0.3563
+        },
+        {
+          "period": "afternoon",
+          "happy": 0.2789,
+          "sad": 0.178,
+          "neutral": 0.3126
+        },
+        {
+          "period": "evening",
+          "happy": 0.2122,
+          "sad": 0.1877,
+          "neutral": 0.3327
+        }
+      ],
+      "emotions": {
+        "happy": 20.21,
+        "sad": 19.35,
+        "angry": 20.72,
+        "fear": 5.19,
+        "disgust": 0.07,
+        "surprise": 0.85,
+        "neutral": 33.61
+      }
+    },
+    {
+      "city": "Istanbul",
+      "lat": 41.0082,
+      "lon": 28.9784,
+      "region": "Marmara",
+      "plate": 34,
+      "area": 5343,
+      "population": 15907951,
+      "altitude": 40,
+      "unique_people": 182,
+      "total_faces": 182,
+      "total_people": 182,
+      "analyzed": 182,
+      "filtered_out": 1215,
+      "video_count": 3,
+      "gra_score": 0.656,
+      "dominant_emotion": "neutral",
+      "dominant_counts": {
+        "happy": 34,
+        "sad": 37,
+        "angry": 18,
+        "fear": 15,
+        "surprise": 1,
+        "neutral": 77
+      },
+      "dayparts": [
+        {
+          "period": "morning",
+          "happy": 0.1455,
+          "sad": 0.2251,
+          "neutral": 0.4476
+        },
+        {
+          "period": "afternoon",
+          "happy": 0.2575,
+          "sad": 0.1849,
+          "neutral": 0.3927
+        },
+        {
+          "period": "evening",
+          "happy": 0.1959,
+          "sad": 0.195,
+          "neutral": 0.418
+        }
+      ],
+      "emotions": {
+        "happy": 18.66,
+        "sad": 20.1,
+        "angry": 10.11,
+        "fear": 8.11,
+        "disgust": 0.12,
+        "surprise": 0.68,
+        "neutral": 42.22
+      }
+    },
+    {
+      "city": "Trabzon",
+      "lat": 41.0027,
+      "lon": 39.7168,
+      "region": "Karadeniz",
+      "plate": 61,
+      "area": 4685,
+      "population": 836679,
+      "altitude": 39,
+      "unique_people": 237,
+      "total_faces": 237,
+      "total_people": 237,
+      "analyzed": 237,
+      "filtered_out": 929,
+      "video_count": 3,
+      "gra_score": 0.6396,
+      "dominant_emotion": "neutral",
+      "dominant_counts": {
+        "happy": 37,
+        "sad": 53,
+        "angry": 26,
+        "fear": 15,
+        "surprise": 1,
+        "neutral": 105
+      },
+      "dayparts": [
+        {
+          "period": "morning",
+          "happy": 0.1209,
+          "sad": 0.2496,
+          "neutral": 0.4702
+        },
+        {
+          "period": "afternoon",
+          "happy": 0.2139,
+          "sad": 0.2051,
+          "neutral": 0.4126
+        },
+        {
+          "period": "evening",
+          "happy": 0.1628,
+          "sad": 0.2162,
+          "neutral": 0.4392
+        }
+      ],
+      "emotions": {
+        "happy": 15.5,
+        "sad": 22.29,
+        "angry": 11.15,
+        "fear": 6.19,
+        "disgust": 0.04,
+        "surprise": 0.46,
+        "neutral": 44.36
+      }
+    },
+    {
+      "city": "Ankara",
+      "lat": 39.9208,
+      "lon": 32.8541,
+      "region": "İç Anadolu",
+      "plate": 6,
+      "area": 25706,
+      "population": 5747325,
+      "altitude": 938,
+      "unique_people": 128,
+      "total_faces": 128,
+      "total_people": 128,
+      "analyzed": 128,
+      "filtered_out": 1195,
+      "video_count": 3,
+      "gra_score": 0.6371,
+      "dominant_emotion": "neutral",
+      "dominant_counts": {
+        "happy": 21,
+        "sad": 26,
+        "angry": 13,
+        "fear": 9,
+        "surprise": 1,
+        "neutral": 58
+      },
+      "dayparts": [
+        {
+          "period": "morning",
+          "happy": 0.1286,
+          "sad": 0.2307,
+          "neutral": 0.4742
+        },
+        {
+          "period": "afternoon",
+          "happy": 0.2275,
+          "sad": 0.1895,
+          "neutral": 0.4161
+        },
+        {
+          "period": "evening",
+          "happy": 0.1731,
+          "sad": 0.1998,
+          "neutral": 0.4429
+        }
+      ],
+      "emotions": {
+        "happy": 16.48,
+        "sad": 20.59,
+        "angry": 9.88,
+        "fear": 7.35,
+        "disgust": 0.26,
+        "surprise": 0.69,
+        "neutral": 44.74
+      }
+    },
+    {
+      "city": "Malatya",
+      "lat": 38.3552,
+      "lon": 38.3095,
+      "region": "Doğu Anadolu",
+      "plate": 44,
+      "area": 12313,
+      "population": 812580,
+      "altitude": 900,
+      "unique_people": 108,
+      "total_faces": 108,
+      "total_people": 108,
+      "analyzed": 108,
+      "filtered_out": 1619,
+      "video_count": 3,
+      "gra_score": 0.6183,
+      "dominant_emotion": "neutral",
+      "dominant_counts": {
+        "happy": 24,
+        "sad": 21,
+        "angry": 19,
+        "fear": 11,
+        "surprise": 1,
+        "neutral": 32
+      },
+      "dayparts": [
+        {
+          "period": "morning",
+          "happy": 0.1759,
+          "sad": 0.2187,
+          "neutral": 0.3094
+        },
+        {
+          "period": "afternoon",
+          "happy": 0.3112,
+          "sad": 0.1797,
+          "neutral": 0.2715
+        },
+        {
+          "period": "evening",
+          "happy": 0.2368,
+          "sad": 0.1894,
+          "neutral": 0.289
+        }
+      ],
+      "emotions": {
+        "happy": 22.55,
+        "sad": 19.53,
+        "angry": 17.3,
+        "fear": 10.05,
+        "disgust": 0.35,
+        "surprise": 1.04,
+        "neutral": 29.19
+      }
+    },
+    {
+      "city": "Izmir",
+      "lat": 38.4189,
+      "lon": 27.1287,
+      "region": "Ege",
+      "plate": 35,
+      "area": 11891,
+      "population": 4462056,
+      "altitude": 25,
+      "unique_people": 149,
+      "total_faces": 149,
+      "total_people": 149,
+      "analyzed": 149,
+      "filtered_out": 1401,
+      "video_count": 3,
+      "gra_score": 0.5917,
+      "dominant_emotion": "neutral",
+      "dominant_counts": {
+        "happy": 23,
+        "sad": 32,
+        "angry": 19,
+        "fear": 11,
+        "surprise": 1,
+        "neutral": 63
+      },
+      "dayparts": [
+        {
+          "period": "morning",
+          "happy": 0.1198,
+          "sad": 0.2422,
+          "neutral": 0.4533
+        },
+        {
+          "period": "afternoon",
+          "happy": 0.212,
+          "sad": 0.199,
+          "neutral": 0.3977
+        },
+        {
+          "period": "evening",
+          "happy": 0.1613,
+          "sad": 0.2098,
+          "neutral": 0.4234
+        }
+      ],
+      "emotions": {
+        "happy": 15.36,
+        "sad": 21.63,
+        "angry": 12.52,
+        "fear": 7.24,
+        "disgust": 0.07,
+        "surprise": 0.42,
+        "neutral": 42.76
+      }
+    },
+    {
+      "city": "Samsun",
+      "lat": 41.2867,
+      "lon": 36.33,
+      "region": "Karadeniz",
+      "plate": 55,
+      "area": 9579,
+      "population": 1369304,
+      "altitude": 4,
+      "unique_people": 215,
+      "total_faces": 215,
+      "total_people": 215,
+      "analyzed": 215,
+      "filtered_out": 1335,
+      "video_count": 3,
+      "gra_score": 0.5911,
+      "dominant_emotion": "neutral",
+      "dominant_counts": {
+        "happy": 32,
+        "sad": 64,
+        "angry": 22,
+        "fear": 10,
+        "neutral": 87
+      },
+      "dayparts": [
+        {
+          "period": "morning",
+          "happy": 0.1168,
+          "sad": 0.3345,
+          "neutral": 0.4263
+        },
+        {
+          "period": "afternoon",
+          "happy": 0.2067,
+          "sad": 0.2748,
+          "neutral": 0.3741
+        },
+        {
+          "period": "evening",
+          "happy": 0.1572,
+          "sad": 0.2897,
+          "neutral": 0.3982
+        }
+      ],
+      "emotions": {
+        "happy": 14.97,
+        "sad": 29.87,
+        "angry": 10.18,
+        "fear": 4.48,
+        "disgust": 0.05,
+        "surprise": 0.23,
+        "neutral": 40.22
+      }
+    },
+    {
+      "city": "Mugla",
+      "lat": 37.2153,
+      "lon": 28.3636,
+      "region": "Akdeniz",
+      "plate": 48,
+      "area": 13338,
+      "population": 1108311,
+      "altitude": 646,
+      "unique_people": 89,
+      "total_faces": 89,
+      "total_people": 89,
+      "analyzed": 89,
+      "filtered_out": 1517,
+      "video_count": 3,
+      "gra_score": 0.5851,
+      "dominant_emotion": "neutral",
+      "dominant_counts": {
+        "happy": 14,
+        "sad": 21,
+        "angry": 10,
+        "fear": 10,
+        "surprise": 1,
+        "neutral": 33
+      },
+      "dayparts": [
+        {
+          "period": "morning",
+          "happy": 0.124,
+          "sad": 0.2653,
+          "neutral": 0.3874
+        },
+        {
+          "period": "afternoon",
+          "happy": 0.2194,
+          "sad": 0.2179,
+          "neutral": 0.3399
+        },
+        {
+          "period": "evening",
+          "happy": 0.1669,
+          "sad": 0.2297,
+          "neutral": 0.3618
+        }
+      ],
+      "emotions": {
+        "happy": 15.9,
+        "sad": 23.68,
+        "angry": 11.15,
+        "fear": 11.34,
+        "disgust": 0.06,
+        "surprise": 1.32,
+        "neutral": 36.54
+      }
+    },
+    {
+      "city": "Van",
+      "lat": 38.4891,
+      "lon": 43.4089,
+      "region": "Doğu Anadolu",
+      "plate": 65,
+      "area": 19069,
+      "population": 1167956,
+      "altitude": 1661,
+      "unique_people": 200,
+      "total_faces": 200,
+      "total_people": 200,
+      "analyzed": 200,
+      "filtered_out": 1223,
+      "video_count": 3,
+      "gra_score": 0.5698,
+      "dominant_emotion": "neutral",
+      "dominant_counts": {
+        "happy": 33,
+        "sad": 42,
+        "angry": 26,
+        "fear": 18,
+        "surprise": 1,
+        "neutral": 80
+      },
+      "dayparts": [
+        {
+          "period": "morning",
+          "happy": 0.1294,
+          "sad": 0.2342,
+          "neutral": 0.4245
+        },
+        {
+          "period": "afternoon",
+          "happy": 0.2289,
+          "sad": 0.1924,
+          "neutral": 0.3724
+        },
+        {
+          "period": "evening",
+          "happy": 0.1742,
+          "sad": 0.2028,
+          "neutral": 0.3965
+        }
+      ],
+      "emotions": {
+        "happy": 16.59,
+        "sad": 20.91,
+        "angry": 13.11,
+        "fear": 8.87,
+        "disgust": 0.08,
+        "surprise": 0.4,
+        "neutral": 40.05
+      }
+    },
+    {
+      "city": "Eskisehir",
+      "lat": 39.7767,
+      "lon": 30.5206,
+      "region": "İç Anadolu",
+      "plate": 26,
+      "area": 13925,
+      "population": 906396,
+      "altitude": 789,
+      "unique_people": 223,
+      "total_faces": 223,
+      "total_people": 223,
+      "analyzed": 223,
+      "filtered_out": 2023,
+      "video_count": 3,
+      "gra_score": 0.5547,
+      "dominant_emotion": "neutral",
+      "dominant_counts": {
+        "happy": 31,
+        "sad": 46,
+        "angry": 37,
+        "fear": 16,
+        "surprise": 2,
+        "neutral": 91
+      },
+      "dayparts": [
+        {
+          "period": "morning",
+          "happy": 0.1087,
+          "sad": 0.2295,
+          "neutral": 0.4344
+        },
+        {
+          "period": "afternoon",
+          "happy": 0.1923,
+          "sad": 0.1885,
+          "neutral": 0.3811
+        },
+        {
+          "period": "evening",
+          "happy": 0.1463,
+          "sad": 0.1988,
+          "neutral": 0.4057
+        }
+      ],
+      "emotions": {
+        "happy": 13.94,
+        "sad": 20.49,
+        "angry": 16.52,
+        "fear": 7.23,
+        "disgust": 0.12,
+        "surprise": 0.72,
+        "neutral": 40.98
+      }
+    },
+    {
+      "city": "Ordu",
+      "lat": 40.9862,
+      "lon": 37.8797,
+      "region": "Karadeniz",
+      "plate": 52,
+      "area": 6001,
+      "population": 737416,
+      "altitude": 4,
+      "unique_people": 162,
+      "total_faces": 162,
+      "total_people": 162,
+      "analyzed": 162,
+      "filtered_out": 2867,
+      "video_count": 3,
+      "gra_score": 0.5538,
+      "dominant_emotion": "neutral",
+      "dominant_counts": {
+        "happy": 20,
+        "sad": 41,
+        "angry": 19,
+        "fear": 13,
+        "surprise": 1,
+        "neutral": 68
+      },
+      "dayparts": [
+        {
+          "period": "morning",
+          "happy": 0.0985,
+          "sad": 0.2866,
+          "neutral": 0.4374
+        },
+        {
+          "period": "afternoon",
+          "happy": 0.1743,
+          "sad": 0.2354,
+          "neutral": 0.3837
+        },
+        {
+          "period": "evening",
+          "happy": 0.1326,
+          "sad": 0.2482,
+          "neutral": 0.4085
+        }
+      ],
+      "emotions": {
+        "happy": 12.63,
+        "sad": 25.59,
+        "angry": 11.51,
+        "fear": 8.04,
+        "disgust": 0.05,
+        "surprise": 0.92,
+        "neutral": 41.26
+      }
+    },
+    {
+      "city": "Canakkale",
+      "lat": 40.1553,
+      "lon": 26.4142,
+      "region": "Marmara",
+      "plate": 17,
+      "area": 9887,
+      "population": 575431,
+      "altitude": 9,
+      "unique_people": 154,
+      "total_faces": 154,
+      "total_people": 154,
+      "analyzed": 154,
+      "filtered_out": 1710,
+      "video_count": 3,
+      "gra_score": 0.5232,
+      "dominant_emotion": "neutral",
+      "dominant_counts": {
+        "happy": 22,
+        "sad": 40,
+        "angry": 22,
+        "fear": 12,
+        "surprise": 1,
+        "neutral": 57
+      },
+      "dayparts": [
+        {
+          "period": "morning",
+          "happy": 0.1126,
+          "sad": 0.291,
+          "neutral": 0.3909
+        },
+        {
+          "period": "afternoon",
+          "happy": 0.1993,
+          "sad": 0.239,
+          "neutral": 0.343
+        },
+        {
+          "period": "evening",
+          "happy": 0.1516,
+          "sad": 0.252,
+          "neutral": 0.3651
+        }
+      ],
+      "emotions": {
+        "happy": 14.44,
+        "sad": 25.98,
+        "angry": 14.0,
+        "fear": 7.91,
+        "disgust": 0.03,
+        "surprise": 0.76,
+        "neutral": 36.88
+      }
+    },
+    {
+      "city": "Diyarbakir",
+      "lat": 37.9144,
+      "lon": 40.2306,
+      "region": "Güneydoğu Anadolu",
+      "plate": 21,
+      "area": 15355,
+      "population": 1791373,
+      "altitude": 677,
+      "unique_people": 164,
+      "total_faces": 164,
+      "total_people": 164,
+      "analyzed": 164,
+      "filtered_out": 1359,
+      "video_count": 3,
+      "gra_score": 0.5133,
+      "dominant_emotion": "sad",
+      "dominant_counts": {
+        "happy": 33,
+        "sad": 50,
+        "angry": 19,
+        "fear": 13,
+        "neutral": 49
+      },
+      "dayparts": [
+        {
+          "period": "morning",
+          "happy": 0.1548,
+          "sad": 0.3411,
+          "neutral": 0.3166
+        },
+        {
+          "period": "afternoon",
+          "happy": 0.2739,
+          "sad": 0.2802,
+          "neutral": 0.2778
+        },
+        {
+          "period": "evening",
+          "happy": 0.2084,
+          "sad": 0.2954,
+          "neutral": 0.2957
+        }
+      ],
+      "emotions": {
+        "happy": 19.85,
+        "sad": 30.45,
+        "angry": 11.68,
+        "fear": 7.73,
+        "disgust": 0.1,
+        "surprise": 0.3,
+        "neutral": 29.87
+      }
+    },
+    {
+      "city": "Sanliurfa",
+      "lat": 37.1591,
+      "lon": 38.7969,
+      "region": "Güneydoğu Anadolu",
+      "plate": 63,
+      "area": 18584,
+      "population": 2143422,
+      "altitude": 518,
+      "unique_people": 100,
+      "total_faces": 100,
+      "total_people": 100,
+      "analyzed": 100,
+      "filtered_out": 2452,
+      "video_count": 3,
+      "gra_score": 0.4999,
+      "dominant_emotion": "neutral",
+      "dominant_counts": {
+        "happy": 14,
+        "sad": 25,
+        "angry": 12,
+        "fear": 9,
+        "neutral": 40
+      },
+      "dayparts": [
+        {
+          "period": "morning",
+          "happy": 0.1054,
+          "sad": 0.2765,
+          "neutral": 0.4227
+        },
+        {
+          "period": "afternoon",
+          "happy": 0.1865,
+          "sad": 0.2271,
+          "neutral": 0.3708
+        },
+        {
+          "period": "evening",
+          "happy": 0.1419,
+          "sad": 0.2395,
+          "neutral": 0.3948
+        }
+      ],
+      "emotions": {
+        "happy": 13.52,
+        "sad": 24.69,
+        "angry": 12.09,
+        "fear": 9.27,
+        "disgust": 0.11,
+        "surprise": 0.46,
+        "neutral": 39.88
+      }
+    },
+    {
+      "city": "Erzurum",
+      "lat": 39.9055,
+      "lon": 41.2658,
+      "region": "Doğu Anadolu",
+      "plate": 25,
+      "area": 25066,
+      "population": 759890,
+      "altitude": 1757,
+      "unique_people": 58,
+      "total_faces": 58,
+      "total_people": 58,
+      "analyzed": 58,
+      "filtered_out": 2971,
+      "video_count": 3,
+      "gra_score": 0.4978,
+      "dominant_emotion": "neutral",
+      "dominant_counts": {
+        "happy": 10,
+        "sad": 15,
+        "angry": 10,
+        "fear": 3,
+        "neutral": 20
+      },
+      "dayparts": [
+        {
+          "period": "morning",
+          "happy": 0.14,
+          "sad": 0.2872,
+          "neutral": 0.3551
+        },
+        {
+          "period": "afternoon",
+          "happy": 0.2478,
+          "sad": 0.2359,
+          "neutral": 0.3116
+        },
+        {
+          "period": "evening",
+          "happy": 0.1885,
+          "sad": 0.2487,
+          "neutral": 0.3317
+        }
+      ],
+      "emotions": {
+        "happy": 17.95,
+        "sad": 25.64,
+        "angry": 17.62,
+        "fear": 4.82,
+        "disgust": 0.27,
+        "surprise": 0.19,
+        "neutral": 33.5
+      }
+    },
+    {
+      "city": "Adana",
+      "lat": 37.0,
+      "lon": 35.3213,
+      "region": "Akdeniz",
+      "plate": 1,
+      "area": 14030,
+      "population": 2237940,
+      "altitude": 65,
+      "unique_people": 62,
+      "total_faces": 62,
+      "total_people": 62,
+      "analyzed": 62,
+      "filtered_out": 3047,
+      "video_count": 3,
+      "gra_score": 0.4977,
+      "dominant_emotion": "neutral",
+      "dominant_counts": {
+        "happy": 9,
+        "sad": 14,
+        "angry": 8,
+        "fear": 5,
+        "neutral": 26
+      },
+      "dayparts": [
+        {
+          "period": "morning",
+          "happy": 0.1139,
+          "sad": 0.2548,
+          "neutral": 0.4309
+        },
+        {
+          "period": "afternoon",
+          "happy": 0.2015,
+          "sad": 0.2093,
+          "neutral": 0.378
+        },
+        {
+          "period": "evening",
+          "happy": 0.1534,
+          "sad": 0.2207,
+          "neutral": 0.4024
+        }
+      ],
+      "emotions": {
+        "happy": 14.61,
+        "sad": 22.75,
+        "angry": 13.1,
+        "fear": 7.94,
+        "disgust": 0.36,
+        "surprise": 0.6,
+        "neutral": 40.65
+      }
+    },
+    {
+      "city": "Gaziantep",
+      "lat": 37.0662,
+      "lon": 37.3833,
+      "region": "Güneydoğu Anadolu",
+      "plate": 27,
+      "area": 6222,
+      "population": 2154051,
+      "altitude": 853,
+      "unique_people": 159,
+      "total_faces": 159,
+      "total_people": 159,
+      "analyzed": 159,
+      "filtered_out": 2202,
+      "video_count": 3,
+      "gra_score": 0.4972,
+      "dominant_emotion": "neutral",
+      "dominant_counts": {
+        "happy": 24,
+        "sad": 46,
+        "angry": 20,
+        "fear": 13,
+        "surprise": 1,
+        "neutral": 55
+      },
+      "dayparts": [
+        {
+          "period": "morning",
+          "happy": 0.1182,
+          "sad": 0.3262,
+          "neutral": 0.3683
+        },
+        {
+          "period": "afternoon",
+          "happy": 0.2092,
+          "sad": 0.2679,
+          "neutral": 0.3231
+        },
+        {
+          "period": "evening",
+          "happy": 0.1591,
+          "sad": 0.2825,
+          "neutral": 0.344
+        }
+      ],
+      "emotions": {
+        "happy": 15.16,
+        "sad": 29.12,
+        "angry": 12.61,
+        "fear": 8.0,
+        "disgust": 0.03,
+        "surprise": 0.33,
+        "neutral": 34.74
+      }
+    },
+    {
+      "city": "Bursa",
+      "lat": 40.1826,
+      "lon": 29.0665,
+      "region": "Marmara",
+      "plate": 16,
+      "area": 11043,
+      "population": 3194720,
+      "altitude": 100,
+      "unique_people": 120,
+      "total_faces": 120,
+      "total_people": 120,
+      "analyzed": 120,
+      "filtered_out": 1875,
+      "video_count": 3,
+      "gra_score": 0.4913,
+      "dominant_emotion": "neutral",
+      "dominant_counts": {
+        "happy": 14,
+        "sad": 28,
+        "angry": 19,
+        "fear": 14,
+        "neutral": 45
+      },
+      "dayparts": [
+        {
+          "period": "morning",
+          "happy": 0.0908,
+          "sad": 0.2647,
+          "neutral": 0.3992
+        },
+        {
+          "period": "afternoon",
+          "happy": 0.1607,
+          "sad": 0.2174,
+          "neutral": 0.3503
+        },
+        {
+          "period": "evening",
+          "happy": 0.1223,
+          "sad": 0.2292,
+          "neutral": 0.3729
+        }
+      ],
+      "emotions": {
+        "happy": 11.64,
+        "sad": 23.63,
+        "angry": 15.6,
+        "fear": 11.27,
+        "disgust": 0.01,
+        "surprise": 0.18,
+        "neutral": 37.66
+      }
+    },
+    {
+      "city": "Edirne",
+      "lat": 41.6818,
+      "lon": 26.5623,
+      "region": "Marmara",
+      "plate": 22,
+      "area": 6241,
+      "population": 421895,
+      "altitude": 41,
+      "unique_people": 88,
+      "total_faces": 88,
+      "total_people": 88,
+      "analyzed": 88,
+      "filtered_out": 2860,
+      "video_count": 3,
+      "gra_score": 0.4245,
+      "dominant_emotion": "neutral",
+      "dominant_counts": {
+        "happy": 14,
+        "sad": 22,
+        "angry": 18,
+        "fear": 9,
+        "neutral": 25
+      },
+      "dayparts": [
+        {
+          "period": "morning",
+          "happy": 0.1237,
+          "sad": 0.2742,
+          "neutral": 0.3024
+        },
+        {
+          "period": "afternoon",
+          "happy": 0.2189,
+          "sad": 0.2253,
+          "neutral": 0.2653
+        },
+        {
+          "period": "evening",
+          "happy": 0.1665,
+          "sad": 0.2375,
+          "neutral": 0.2824
+        }
+      ],
+      "emotions": {
+        "happy": 15.86,
+        "sad": 24.49,
+        "angry": 19.93,
+        "fear": 10.69,
+        "disgust": 0.15,
+        "surprise": 0.35,
+        "neutral": 28.53
+      }
+    }
+  ],
+  "ranking": [
+    {
+      "rank": 1,
+      "city": "Hatay",
+      "gra_score": 0.7495,
+      "final_score": 0.7495,
+      "grade": 0.7495,
+      "level": "Yüksek Uyum",
+      "happy": 0.2058,
+      "sad": 0.1993,
+      "angry": 0.0906,
+      "fear": 0.0745,
+      "disgust": 0.0011,
+      "surprise": 0.0123,
+      "neutral": 0.4164,
+      "unique_people": 146,
+      "total_faces": 146
+    },
+    {
+      "rank": 2,
+      "city": "Antalya",
+      "gra_score": 0.7317,
+      "final_score": 0.7317,
+      "grade": 0.7317,
+      "level": "Yüksek Uyum",
+      "happy": 0.2368,
+      "sad": 0.2052,
+      "angry": 0.1047,
+      "fear": 0.0863,
+      "disgust": 0.0006,
+      "surprise": 0.0024,
+      "neutral": 0.3639,
+      "unique_people": 92,
+      "total_faces": 92
+    },
+    {
+      "rank": 3,
+      "city": "Konya",
+      "gra_score": 0.6609,
+      "final_score": 0.6609,
+      "grade": 0.6609,
+      "level": "Yüksek Uyum",
+      "happy": 0.2021,
+      "sad": 0.1935,
+      "angry": 0.2072,
+      "fear": 0.0519,
+      "disgust": 0.0007,
+      "surprise": 0.0085,
+      "neutral": 0.3361,
+      "unique_people": 73,
+      "total_faces": 73
+    },
+    {
+      "rank": 4,
+      "city": "Istanbul",
+      "gra_score": 0.656,
+      "final_score": 0.656,
+      "grade": 0.656,
+      "level": "Yüksek Uyum",
+      "happy": 0.1866,
+      "sad": 0.201,
+      "angry": 0.1011,
+      "fear": 0.0811,
+      "disgust": 0.0012,
+      "surprise": 0.0068,
+      "neutral": 0.4222,
+      "unique_people": 182,
+      "total_faces": 182
+    },
+    {
+      "rank": 5,
+      "city": "Trabzon",
+      "gra_score": 0.6396,
+      "final_score": 0.6396,
+      "grade": 0.6396,
+      "level": "Orta Uyum",
+      "happy": 0.155,
+      "sad": 0.2229,
+      "angry": 0.1115,
+      "fear": 0.0619,
+      "disgust": 0.0004,
+      "surprise": 0.0046,
+      "neutral": 0.4436,
+      "unique_people": 237,
+      "total_faces": 237
+    },
+    {
+      "rank": 6,
+      "city": "Ankara",
+      "gra_score": 0.6371,
+      "final_score": 0.6371,
+      "grade": 0.6371,
+      "level": "Orta Uyum",
+      "happy": 0.1648,
+      "sad": 0.2059,
+      "angry": 0.0988,
+      "fear": 0.0735,
+      "disgust": 0.0026,
+      "surprise": 0.0069,
+      "neutral": 0.4474,
+      "unique_people": 128,
+      "total_faces": 128
+    },
+    {
+      "rank": 7,
+      "city": "Malatya",
+      "gra_score": 0.6183,
+      "final_score": 0.6183,
+      "grade": 0.6183,
+      "level": "Orta Uyum",
+      "happy": 0.2255,
+      "sad": 0.1953,
+      "angry": 0.173,
+      "fear": 0.1005,
+      "disgust": 0.0035,
+      "surprise": 0.0104,
+      "neutral": 0.2919,
+      "unique_people": 108,
+      "total_faces": 108
+    },
+    {
+      "rank": 8,
+      "city": "Izmir",
+      "gra_score": 0.5917,
+      "final_score": 0.5917,
+      "grade": 0.5917,
+      "level": "Orta Uyum",
+      "happy": 0.1536,
+      "sad": 0.2163,
+      "angry": 0.1252,
+      "fear": 0.0724,
+      "disgust": 0.0006,
+      "surprise": 0.0042,
+      "neutral": 0.4276,
+      "unique_people": 149,
+      "total_faces": 149
+    },
+    {
+      "rank": 9,
+      "city": "Samsun",
+      "gra_score": 0.5911,
+      "final_score": 0.5911,
+      "grade": 0.5911,
+      "level": "Orta Uyum",
+      "happy": 0.1497,
+      "sad": 0.2987,
+      "angry": 0.1018,
+      "fear": 0.0448,
+      "disgust": 0.0005,
+      "surprise": 0.0023,
+      "neutral": 0.4022,
+      "unique_people": 215,
+      "total_faces": 215
+    },
+    {
+      "rank": 10,
+      "city": "Mugla",
+      "gra_score": 0.5851,
+      "final_score": 0.5851,
+      "grade": 0.5851,
+      "level": "Orta Uyum",
+      "happy": 0.159,
+      "sad": 0.2368,
+      "angry": 0.1115,
+      "fear": 0.1134,
+      "disgust": 0.0006,
+      "surprise": 0.0132,
+      "neutral": 0.3654,
+      "unique_people": 89,
+      "total_faces": 89
+    },
+    {
+      "rank": 11,
+      "city": "Van",
+      "gra_score": 0.5698,
+      "final_score": 0.5698,
+      "grade": 0.5698,
+      "level": "Orta Uyum",
+      "happy": 0.1659,
+      "sad": 0.2091,
+      "angry": 0.1311,
+      "fear": 0.0887,
+      "disgust": 0.0008,
+      "surprise": 0.004,
+      "neutral": 0.4005,
+      "unique_people": 200,
+      "total_faces": 200
+    },
+    {
+      "rank": 12,
+      "city": "Eskisehir",
+      "gra_score": 0.5547,
+      "final_score": 0.5547,
+      "grade": 0.5547,
+      "level": "Orta Uyum",
+      "happy": 0.1394,
+      "sad": 0.2049,
+      "angry": 0.1652,
+      "fear": 0.0723,
+      "disgust": 0.0013,
+      "surprise": 0.0072,
+      "neutral": 0.4098,
+      "unique_people": 223,
+      "total_faces": 223
+    },
+    {
+      "rank": 13,
+      "city": "Ordu",
+      "gra_score": 0.5538,
+      "final_score": 0.5538,
+      "grade": 0.5538,
+      "level": "Orta Uyum",
+      "happy": 0.1263,
+      "sad": 0.2559,
+      "angry": 0.1151,
+      "fear": 0.0804,
+      "disgust": 0.0005,
+      "surprise": 0.0092,
+      "neutral": 0.4126,
+      "unique_people": 162,
+      "total_faces": 162
+    },
+    {
+      "rank": 14,
+      "city": "Canakkale",
+      "gra_score": 0.5232,
+      "final_score": 0.5232,
+      "grade": 0.5232,
+      "level": "Orta Uyum",
+      "happy": 0.1444,
+      "sad": 0.2598,
+      "angry": 0.14,
+      "fear": 0.0791,
+      "disgust": 0.0003,
+      "surprise": 0.0076,
+      "neutral": 0.3688,
+      "unique_people": 154,
+      "total_faces": 154
+    },
+    {
+      "rank": 15,
+      "city": "Diyarbakir",
+      "gra_score": 0.5133,
+      "final_score": 0.5133,
+      "grade": 0.5133,
+      "level": "Orta Uyum",
+      "happy": 0.1985,
+      "sad": 0.3045,
+      "angry": 0.1168,
+      "fear": 0.0773,
+      "disgust": 0.001,
+      "surprise": 0.003,
+      "neutral": 0.2987,
+      "unique_people": 164,
+      "total_faces": 164
+    },
+    {
+      "rank": 16,
+      "city": "Sanliurfa",
+      "gra_score": 0.4999,
+      "final_score": 0.4999,
+      "grade": 0.4999,
+      "level": "Düşük Uyum",
+      "happy": 0.1352,
+      "sad": 0.2469,
+      "angry": 0.1209,
+      "fear": 0.0927,
+      "disgust": 0.0011,
+      "surprise": 0.0046,
+      "neutral": 0.3987,
+      "unique_people": 100,
+      "total_faces": 100
+    },
+    {
+      "rank": 17,
+      "city": "Erzurum",
+      "gra_score": 0.4978,
+      "final_score": 0.4978,
+      "grade": 0.4978,
+      "level": "Düşük Uyum",
+      "happy": 0.1795,
+      "sad": 0.2564,
+      "angry": 0.1762,
+      "fear": 0.0482,
+      "disgust": 0.0027,
+      "surprise": 0.0019,
+      "neutral": 0.335,
+      "unique_people": 58,
+      "total_faces": 58
+    },
+    {
+      "rank": 18,
+      "city": "Adana",
+      "gra_score": 0.4977,
+      "final_score": 0.4977,
+      "grade": 0.4977,
+      "level": "Düşük Uyum",
+      "happy": 0.1461,
+      "sad": 0.2275,
+      "angry": 0.131,
+      "fear": 0.0794,
+      "disgust": 0.0036,
+      "surprise": 0.006,
+      "neutral": 0.4065,
+      "unique_people": 62,
+      "total_faces": 62
+    },
+    {
+      "rank": 19,
+      "city": "Gaziantep",
+      "gra_score": 0.4972,
+      "final_score": 0.4972,
+      "grade": 0.4972,
+      "level": "Düşük Uyum",
+      "happy": 0.1516,
+      "sad": 0.2912,
+      "angry": 0.1261,
+      "fear": 0.08,
+      "disgust": 0.0003,
+      "surprise": 0.0033,
+      "neutral": 0.3474,
+      "unique_people": 159,
+      "total_faces": 159
+    },
+    {
+      "rank": 20,
+      "city": "Bursa",
+      "gra_score": 0.4913,
+      "final_score": 0.4913,
+      "grade": 0.4913,
+      "level": "Düşük Uyum",
+      "happy": 0.1164,
+      "sad": 0.2363,
+      "angry": 0.156,
+      "fear": 0.1127,
+      "disgust": 0.0001,
+      "surprise": 0.0018,
+      "neutral": 0.3766,
+      "unique_people": 120,
+      "total_faces": 120
+    },
+    {
+      "rank": 21,
+      "city": "Edirne",
+      "gra_score": 0.4245,
+      "final_score": 0.4245,
+      "grade": 0.4245,
+      "level": "Düşük Uyum",
+      "happy": 0.1586,
+      "sad": 0.2449,
+      "angry": 0.1993,
+      "fear": 0.1069,
+      "disgust": 0.0015,
+      "surprise": 0.0035,
+      "neutral": 0.2853,
+      "unique_people": 88,
+      "total_faces": 88
+    }
+  ]
+}
