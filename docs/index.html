@@ -406,7 +406,7 @@ const ECOLORS=['#16a34a','#2563eb','#dc2626','#d97706','#9333ea','#ec4899','#6b7
 const EKEYS=['happy','sad','angry','fear','disgust','surprise','neutral'];
 function gs(r){return+(r.gra_score||r.final_score||r.grade||0)}
 function mapC(s){if(s>=.70)return'#166534';if(s>=.60)return'#16a34a';if(s>=.50)return'#86efac';if(s>0)return'#bbf7d0';return'#e5e7eb'}
-function lvl(s){if(s>=.70)return['Yüksek Uyum','success'];if(s>=.55)return['Orta Uyum','warning'];return['Düşük Uyum','secondary']}
+function lvl(s){if(s>=.60)return['Yüksek Uyum','success'];if(s>=.50)return['Orta Uyum','warning'];return['Düşük Uyum','secondary']}
 const BASE=(['localhost','127.0.0.1'].includes(location.hostname))?`http://${location.hostname}:5000`:null;
 
 /* ═══ LOAD ═══ */
