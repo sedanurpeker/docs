@@ -194,6 +194,22 @@ h2,h3,h4,h5,h6{color:var(--primary)}
     <h2 class="hero-title">Video Yükle ve Duygu Atmosferini Analiz Et</h2>
     <p class="hero-sub">İstersen herhangi bir ortam videosunu genel analiz olarak işleyebilir, istersen şehir adı girerek sonucu GRA tabanlı şehir mutluluk sıralamasına dahil edebilirsin.</p>
   </section>
+  <!-- Demo uyarısı — GitHub Pages'de gösterilir -->
+  <div id="upload-demo-warning" class="d-none">
+    <div class="glass-card p-5 text-center mb-4">
+      <div style="font-size:3.5rem;margin-bottom:16px">🎥</div>
+      <h4 class="fw-bold" style="color:#0f766e">Video Yükle ve Duygu Atmosferini Analiz Et</h4>
+      <p class="text-muted mt-2 mb-1">İstersen herhangi bir ortam videosunu genel analiz olarak işleyebilir, istersen şehir adı girerek sonucu GRA tabanlı şehir mutluluk sıralamasına dahil edebilirsin.</p>
+      <p class="text-muted mb-4 small"><em>Bu özellik sunum ortamında laptop üzerinden canlı olarak gösterilmektedir.</em></p>
+      <div class="row g-3 mt-2 text-start justify-content-center mb-4">
+        <div class="col-md-4"><div class="soft-alert h-100"><div class="fw-bold mb-1" style="color:#0369a1">1. Video Seç</div>MP4, AVI, MOV, MKV veya WEBM formatında video dosyası seçilir.</div></div>
+        <div class="col-md-4"><div class="soft-alert h-100"><div class="fw-bold mb-1" style="color:#0369a1">2. Analiz Başlat</div>Sistem videoyu karelere ayırır, yüzleri tespit eder ve duygu skorlarını hesaplar.</div></div>
+        <div class="col-md-4"><div class="soft-alert h-100"><div class="fw-bold mb-1" style="color:#0369a1">3. Sonucu Gör</div>Kişi bazlı duygu dağılımı ve GRA sıralaması güncellenir.</div></div>
+      </div>
+      <button onclick="showTab('home',document.querySelector('.nav-btn'))" class="btn btn-secondary px-4">Ana Sayfaya Dön</button>
+    </div>
+  </div>
+
   <div id="upload-form-wrap">
     <div class="row g-4 align-items-stretch justify-content-center">
       <div class="col-lg-5">
@@ -272,15 +288,16 @@ h2,h3,h4,h5,h6{color:var(--primary)}
     <p class="hero-sub">Webcam görüntüsü tarayıcıda canlı işleniyor — ayrı pencere açılmaz.</p>
   </section>
   <div id="rt-offline" class="glass-card p-5 text-center mb-4">
-    <div style="font-size:3rem;margin-bottom:16px">📷</div>
-    <h4 class="fw-bold">Realtime Duygu Analizi</h4>
-    <p class="text-muted mt-2 mb-4">Kamera penceresi bilgisayarda ayrı bir OpenCV ekranı olarak açılacaktır.</p>
-    <div class="row g-3 text-start justify-content-center">
-      <div class="col-md-4"><div class="soft-alert h-100"><strong>1. Kalibrasyon</strong><br>Önce nötr yüzle kameraya düz bak.</div></div>
-      <div class="col-md-4"><div class="soft-alert h-100"><strong>2. Test</strong><br>Gülümseme, kızgın ve nötr ifadeleri dene.</div></div>
-      <div class="col-md-4"><div class="soft-alert h-100"><strong>3. Çıkış</strong><br>Kamera penceresinde Q tuşuna bas.</div></div>
+    <div style="font-size:3.5rem;margin-bottom:16px">📷</div>
+    <h4 class="fw-bold" style="color:#0f766e">Realtime Duygu Analizi</h4>
+    <p class="text-muted mt-2 mb-1">Kamera penceresi bilgisayarda ayrı bir OpenCV ekranı olarak açılacaktır.</p>
+    <p class="text-muted mb-4 small"><em>Bu özellik sunum ortamında laptop üzerinden canlı olarak gösterilmektedir.</em></p>
+    <div class="row g-3 mt-2 text-start justify-content-center mb-4">
+      <div class="col-md-4"><div class="soft-alert h-100"><div class="fw-bold mb-1" style="color:#0369a1">1. Kalibrasyon</div>Önce nötr yüzle kameraya düz bak.</div></div>
+      <div class="col-md-4"><div class="soft-alert h-100"><div class="fw-bold mb-1" style="color:#0369a1">2. Test</div>Gülümseme, kızgın ve nötr ifadeleri dene.</div></div>
+      <div class="col-md-4"><div class="soft-alert h-100"><div class="fw-bold mb-1" style="color:#0369a1">3. Çıkış</div>Kamera penceresinde Q tuşuna bas.</div></div>
     </div>
-    <button onclick="showTab('home')" class="btn btn-secondary mt-4 px-4">Ana Sayfaya Dön</button>
+    <button onclick="showTab('home',document.querySelector('.nav-btn'))" class="btn btn-secondary px-4">Ana Sayfaya Dön</button>
   </div>
   <div id="rt-active" class="d-none">
     <div class="row g-4">
@@ -704,6 +721,25 @@ function showTab(t,el){
   document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('active'));
   if(el)el.classList.add('active');
   window.scrollTo({top:0,behavior:'smooth'});
+  // Canlı analiz sekmesi açılınca
+  if(t==='realtime'){
+    if(!BASE){
+      document.getElementById('rt-offline').classList.remove('d-none');
+      document.getElementById('rt-active').classList.add('d-none');
+    } else {
+      checkServer();
+    }
+  }
+  // Video yükle sekmesi açılınca
+  if(t==='upload'){
+    if(!BASE){
+      document.getElementById('upload-demo-warning').classList.remove('d-none');
+      document.getElementById('upload-form-wrap').classList.add('d-none');
+    } else {
+      document.getElementById('upload-demo-warning').classList.add('d-none');
+      document.getElementById('upload-form-wrap').classList.remove('d-none');
+    }
+  }
 }
 
 /* ═══ VIDEO UPLOAD ═══ */
