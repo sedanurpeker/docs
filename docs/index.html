@@ -501,12 +501,14 @@ function renderRanking(){
     </div></div></div>`;
   }).join('');
   document.getElementById('rank-tbody').innerHTML=rk.map((r,i)=>{
-    const s=gs(r);const[l,c]=lvl(s);
+    const s=gs(r);
+    const lvlTxt=r.level||'';
+    const lvlColor=lvlTxt==='Çok Yüksek Uyum'?'success':lvlTxt==='Yüksek Uyum'?'primary':lvlTxt==='Orta Uyum'?'warning text-dark':'secondary';
     return`<tr>
       <td>${i<3?MED[i]:`<span class="fw-bold">${i+1}</span>`}</td>
       <td class="fw-bold">${r.city}</td>
       <td><span class="badge bg-success px-3 py-2">${s.toFixed(4)}</span></td>
-      <td><span class="badge bg-${c}">${l}</span></td>
+      <td><span class="badge bg-${lvlColor}">${lvlTxt}</span></td>
       <td class="progress-cell"><div class="progress" style="height:10px;border-radius:8px"><div class="progress-bar bg-success" style="width:${(s*100).toFixed(1)}%"></div></div><small class="text-muted">%${(s*100).toFixed(1)}</small></td>
       <td><button onclick="openModal('${r.city}')" class="btn btn-sm btn-outline-success">Detayları Gör</button></td>
     </tr>`;
