@@ -102,9 +102,9 @@ body{background:radial-gradient(circle at top left,rgba(17,138,126,.10),transpar
 .emo-fill{height:100%;border-radius:4px;transition:width .4s}
 .emo-val{font-size:.78rem;font-weight:700;min-width:40px;text-align:right}
 /* CITY MODAL */
-.modal-overlay{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.55);z-index:1050;overflow-y:auto;padding:20px;box-sizing:border-box}
+.modal-overlay{display:none;position:relative;z-index:1}.modal-overlay.open{display:block}
 .modal-overlay.open{display:flex}
-.modal-box{background:#fff;border-radius:20px;padding:28px;max-width:820px;width:100%;margin:20px auto;box-shadow:0 24px 60px rgba(0,0,0,.18)}
+.modal-box{background:#fff;border-radius:20px;padding:28px;max-width:820px;width:100%;margin:0 auto}
 /* REPORT */
 .report-wrap{background:#fff;border-radius:16px;border:1px solid #e8eef5;padding:40px}
 .report-pre{background:#0f172a;color:#d1fae5;padding:24px;border-radius:16px;font-family:monospace;font-size:.82rem;line-height:1.7;white-space:pre-wrap;max-height:70vh;overflow-y:auto}
@@ -418,10 +418,44 @@ h2,h3,h4,h5,h6{color:var(--primary)}
   <div id="report-body"><div class="text-center p-5"><div class="spinner-border text-success"></div></div></div>
 </div>
 
+
+<!-- ŞEHİR DETAY SAYFASI -->
+<div id="tab-city" class="section">
+  <div class="container">
+    <div class="d-flex align-items-center gap-3 mb-4">
+      <button onclick="closeCityPage()" class="btn btn-outline-secondary btn-sm">← Geri</button>
+      <h4 class="fw-bold mb-0" id="cp-title" style="color:#5B21B6"></h4>
+    </div>
+    <div id="cp-badge" class="mb-3"></div>
+    <div class="panel-card p-4 mb-3">
+      <div class="info-grid-city" id="cp-info-grid"></div>
+      <div class="text-center mt-3">
+        <button onclick="downloadCityReport()" class="btn btn-success btn-sm">📄 Akademik Raporunu İndir</button>
+      </div>
+    </div>
+    <div class="panel-card soft-blue p-4 mb-3">
+      <h5 class="mb-3" style="color:#0F766E;font-weight:700">Analiz Özeti</h5>
+      <p class="muted-small mb-3">Bu analizde video boyunca takip edilen her kişi yalnızca <strong>bir kez</strong> sayılmıştır. Toplam benzersiz kişiler ayrı, duygu analizine güvenilir şekilde dahil edilen kişiler ayrı gösterilmiştir. Çok küçük, geçersiz ya da düşük güvenli yüz tespitleri kalite filtresiyle elenmiştir.</p>
+      <div class="row text-center" id="cp-summary-stats"></div>
+    </div>
+    <div class="panel-card p-4 mb-3">
+      <h5 class="text-center fw-bold mb-2" style="color:#0F4C81">Kişi Bazlı Duygu Dağılımı</h5>
+      <p class="text-center muted-small mb-4">Her kişi için video boyunca toplanan duygu skorları zaman ağırlıklı şekilde değerlendirilmiş ve her kişi için tek bir baskın duygu belirlenmiştir.</p>
+      <div class="row justify-content-center" id="cp-emotion-cards"></div>
+      <div style="max-width:700px;margin:20px auto 0;height:220px"><canvas id="cp-person-chart"></canvas></div>
+    </div>
+    <div class="chart-card mb-3"><div style="height:260px"><canvas id="cp-emotion-chart"></canvas></div></div>
+    <div class="chart-card mb-3"><div style="height:200px"><canvas id="cp-timeline-chart"></canvas></div></div>
+    <div class="chart-card mb-3"><div style="height:220px"><canvas id="cp-daypart-chart"></canvas></div></div>
+    <div class="panel-card p-3 mb-4">
+      <p class="text-center muted-small mb-0"><strong>Analiz ve GRA Hakkında</strong><br>Bu sayfadaki sonuçlar kişi bazlı duygu özetlerinden üretilmiştir. Aynı kişi video boyunca birden fazla karede görünse bile yalnızca bir kişi olarak sayılır. GRA skoru, şehir duygu dağılımının mutluluk odaklı referans yapıya yakınlığına göre hesaplanır.</p>
+    </div>
+  </div>
+</div>
 </div></main>
 
 <!-- ŞEHİR DETAY MODAL — birebir city.html -->
-<div class="modal-overlay" id="cityModal" onclick="if(event.target===this)closeModal()">
+<div class="modal-overlay" id="cityModal">
   <div class="modal-box">
     <div class="d-flex justify-content-between align-items-center mb-4">
       <h4 class="section-title-purple mb-0" id="m-title">—</h4>
@@ -656,82 +690,85 @@ function openModal(name){
   const rank=D?.ranking?.find(r=>r.city===name);
   if(!city)return;
   _mc=city;
+  // Mobil + Web: tam sayfa section aç
+  buildCityPage(city, rank);
+  showTab('city', null);
+  window.scrollTo(0,0);
+}
+
+function closeCityPage(){
+  // Hangi tabdan geldiğimizi bilmiyoruz, ana sayfaya dön
+  showTab('home', document.querySelector('.nav-btn'));
+}
+
+function buildCityPage(city, rank){
   const s=gs(city);const[l,lc]=lvl(s);const e=city.emotions||{};
   const dc=city.dominant_counts||{};
-  const info=city;
 
-  // Title
-  document.getElementById('m-title').textContent=`${city.city} — Genel Bilgiler`;
+  document.getElementById('cp-title').textContent=city.city+' — Genel Bilgiler';
+  document.getElementById('cp-badge').innerHTML=`<span class="badge bg-success fs-6 me-2">GRA ${s.toFixed(4)}</span><span class="badge bg-${lc}">${l}</span>${rank?`<span class="badge bg-secondary ms-2">#${rank.rank}. Sıra</span>`:''}`;
 
-  // Info grid (plaka, alan, nüfus, bölge, rakım, GRA)
-  document.getElementById('m-info-grid').innerHTML=`
-    <div class="info-box-city"><strong>Plaka</strong><span>${info.plate||'—'}</span></div>
-    <div class="info-box-city"><strong>Alan</strong><span>${(info.area||0).toLocaleString('tr-TR')} km²</span></div>
-    <div class="info-box-city"><strong>Nüfus</strong><span>${(info.population||0).toLocaleString('tr-TR')}</span></div>
-    <div class="info-box-city"><strong>Bölge</strong><span>${info.region||'—'}</span></div>
-    <div class="info-box-city"><strong>Rakım</strong><span>${info.altitude||'—'} m</span></div>
+  document.getElementById('cp-info-grid').innerHTML=`
+    <div class="info-box-city"><strong>Plaka</strong><span>${city.plate||'—'}</span></div>
+    <div class="info-box-city"><strong>Alan</strong><span>${(city.area||0).toLocaleString('tr-TR')} km²</span></div>
+    <div class="info-box-city"><strong>Nüfus</strong><span>${(city.population||0).toLocaleString('tr-TR')}</span></div>
+    <div class="info-box-city"><strong>Bölge</strong><span>${city.region||'—'}</span></div>
+    <div class="info-box-city"><strong>Rakım</strong><span>${city.altitude||'—'} m</span></div>
     <div class="info-box-city"><strong>GRA Skoru</strong><span>${s.toFixed(3)}</span></div>`;
 
-  // Summary stats
+  const totalBenzersiz=city.total_people||city.unique_people||0;
+  const dahilEdilen=city.analyzed||city.unique_people||0;
   const domEmo=city.dominant_emotion||Object.entries(dc).sort((a,b)=>b[1]-a[1])[0]?.[0]||'neutral';
   const domCount=dc[domEmo]||0;
-  const totalBenzersiz = city.total_people || city.unique_people || 0;
-  const dahilEdilen = city.analyzed || city.unique_people || 0;
-  document.getElementById('m-summary-stats').innerHTML=`
-    <div class="col-md-3 mb-3"><div class="mini-stat"><div style="font-size:2rem;font-weight:700;color:#0284c7">${totalBenzersiz}</div><div class="muted-small">Toplam Benzersiz Kişi</div></div></div>
-    <div class="col-md-3 mb-3"><div class="mini-stat"><div style="font-size:2rem;font-weight:700;color:#16a34a">${dahilEdilen}</div><div class="muted-small">Duygu Analizine Dahil Edilen</div></div></div>
-    <div class="col-md-3 mb-3"><div class="mini-stat"><div style="font-size:2rem;font-weight:700;color:#ca8a04">${city.filtered_out||0}</div><div class="muted-small">Kalite Filtresiyle Elenen</div></div></div>
-    <div class="col-md-3 mb-3"><div class="mini-stat">
-      <div style="font-size:1.8rem">${EMJ[domEmo]||'😐'}</div>
-      <div style="font-size:.9rem;color:#6b7280">Baskın Duygu: ${ETR[domEmo]||domEmo} (${domCount} kişi)</div>
-      <div style="font-size:1.3rem;font-weight:700;color:#db2777">${s.toFixed(3)}</div>
+
+  document.getElementById('cp-summary-stats').innerHTML=`
+    <div class="col-6 col-md-3 mb-3"><div class="mini-stat"><div style="font-size:1.8rem;font-weight:700;color:#0284c7">${totalBenzersiz}</div><div class="muted-small">Toplam Benzersiz Kişi</div></div></div>
+    <div class="col-6 col-md-3 mb-3"><div class="mini-stat"><div style="font-size:1.8rem;font-weight:700;color:#16a34a">${dahilEdilen}</div><div class="muted-small">Duygu Analizine Dahil Edilen</div></div></div>
+    <div class="col-6 col-md-3 mb-3"><div class="mini-stat"><div style="font-size:1.8rem;font-weight:700;color:#ca8a04">${city.filtered_out||0}</div><div class="muted-small">Kalite Filtresiyle Elenen</div></div></div>
+    <div class="col-6 col-md-3 mb-3"><div class="mini-stat">
+      <div style="font-size:1.6rem">${EMJ[domEmo]||'😐'}</div>
+      <div style="font-size:.85rem;color:#6b7280">Baskın: ${ETR[domEmo]||domEmo} (${domCount} kişi)</div>
+      <div style="font-size:1.2rem;font-weight:700;color:#db2777">${s.toFixed(3)}</div>
       <div class="muted-small">GRA Skoru</div>
     </div></div>`;
 
-  // Emotion cards (kişi sayısı)
   const sortedDc=Object.entries(dc).sort((a,b)=>b[1]-a[1]).filter(([,v])=>v>0);
-  document.getElementById('m-emotion-cards').innerHTML=sortedDc.map(([k,cnt])=>`
-    <div class="col-md-2 col-sm-4 col-6 mb-3 text-center">
+  document.getElementById('cp-emotion-cards').innerHTML=sortedDc.map(([k,cnt])=>`
+    <div class="col-4 col-md-2 mb-3 text-center">
       <div class="emotion-card ${ECARD[k]||''}">
-        <div style="font-size:2.1rem">${EMJ[k]||'•'}</div>
-        <div class="${ECNT[k]||''}" style="font-size:1.6rem;font-weight:700">${cnt}</div>
-        <div style="font-size:.85rem;color:#6b7280;font-weight:600">${ETR[k]||k}</div>
-        <div style="font-size:.75rem;color:#9ca3af">kişi</div>
+        <div style="font-size:1.8rem">${EMJ[k]||'•'}</div>
+        <div class="${ECNT[k]||''}" style="font-size:1.4rem;font-weight:700">${cnt}</div>
+        <div style="font-size:.8rem;color:#6b7280;font-weight:600">${ETR[k]||k}</div>
+        <div style="font-size:.72rem;color:#9ca3af">kişi</div>
       </div>
     </div>`).join('');
 
-  // Destroy old charts
   [mPC,mEC,mTL,mDP].forEach(c=>{try{if(c)c.destroy()}catch(e){}});
 
-  // Person count bar chart
-  const pCtx=document.getElementById('m-person-chart').getContext('2d');
-  const pEntries=sortedDc;
+  const pCtx=document.getElementById('cp-person-chart').getContext('2d');
   mPC=new Chart(pCtx,{type:'bar',data:{
-    labels:pEntries.map(([k])=>ETR[k]||k),
-    datasets:[{label:'Kişi sayısı',data:pEntries.map(([,v])=>v),
-      backgroundColor:pEntries.map(([k])=>EC_[k]||'#999'),borderRadius:6}]
-  },options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},title:{display:true,text:'Her baskın duyguda kaç kişi var?'}},scales:{x:{beginAtZero:true,title:{display:true,text:'Kişi sayısı'}}}}});
+    labels:sortedDc.map(([k])=>ETR[k]||k),
+    datasets:[{label:'Kişi sayısı',data:sortedDc.map(([,v])=>v),backgroundColor:sortedDc.map(([k])=>EC_[k]||'#999'),borderRadius:6}]
+  },options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},title:{display:true,text:'Her baskın duyguda kaç kişi var?'}},scales:{x:{beginAtZero:true}}}});
 
-  // Emotion % bar chart
-  const eCtx=document.getElementById('m-emotion-chart').getContext('2d');
+  const eCtx=document.getElementById('cp-emotion-chart').getContext('2d');
   mEC=new Chart(eCtx,{type:'bar',data:{
     labels:EKEYS.map(k=>ETR[k]),
     datasets:[{label:'Kişi Bazlı Ortalama Duygu Skoru (%)',data:EKEYS.map(k=>+((e[k]||0)).toFixed(1)),backgroundColor:ECOLORS,borderWidth:1}]
-  },options:{responsive:true,maintainAspectRatio:false,plugins:{title:{display:true,text:[`${city.city} — Ortalama Duygu Dağılımı`,`Toplam ${city.unique_people||0} kişi takip edildi`],font:{size:14,weight:'bold'},color:'#0F4C81'},tooltip:{callbacks:{label:ctx=>`${ctx.dataset.label}: %${Number(ctx.raw).toFixed(1)}`}}},scales:{y:{beginAtZero:true,title:{display:true,text:'Oran (%)'}}}}});
+  },options:{responsive:true,maintainAspectRatio:false,plugins:{title:{display:true,text:[city.city+' — Ortalama Duygu Dağılımı','Toplam '+totalBenzersiz+' kişi takip edildi'],color:'#0F4C81'}},scales:{y:{beginAtZero:true,title:{display:true,text:'Oran (%)'}}}}});
 
-  // Timeline (zaman bazlı mutluluk)
   const dp=city.dayparts||[];
   const periodNames={morning:'Sabah',afternoon:'Öğleden Sonra',evening:'Akşam'};
   const pOrder=['morning','afternoon','evening'];
   const ordered=pOrder.map(p=>dp.find(x=>x.period===p)).filter(Boolean);
   if(ordered.length){
-    const tCtx=document.getElementById('m-timeline-chart').getContext('2d');
+    const tCtx=document.getElementById('cp-timeline-chart').getContext('2d');
     mTL=new Chart(tCtx,{type:'line',data:{
       labels:ordered.map(x=>periodNames[x.period]||x.period),
       datasets:[{label:'Mutlu (%)',data:ordered.map(x=>+((x.happy||0)*100).toFixed(1)),tension:.35,fill:false,borderWidth:3,pointRadius:5}]
-    },options:{responsive:true,maintainAspectRatio:false,plugins:{title:{display:true,text:'Zaman Bazlı Mutluluk Grafiği',font:{size:14,weight:'bold'}},subtitle:{display:true,text:'Sabah - Öğleden Sonra - Akşam Mutluluk Değişimi'}},scales:{y:{beginAtZero:true,title:{display:true,text:'Mutluluk (%)'}},x:{title:{display:true,text:'Gün Zamanı'}}}}});
+    },options:{responsive:true,maintainAspectRatio:false,plugins:{title:{display:true,text:'Zaman Bazlı Mutluluk Grafiği'}},scales:{y:{beginAtZero:true,title:{display:true,text:'Mutluluk (%)'}},x:{title:{display:true,text:'Gün Zamanı'}}}}});
 
-    const dCtx=document.getElementById('m-daypart-chart').getContext('2d');
+    const dCtx=document.getElementById('cp-daypart-chart').getContext('2d');
     mDP=new Chart(dCtx,{type:'bar',data:{
       labels:ordered.map(x=>periodNames[x.period]||x.period),
       datasets:[
@@ -739,12 +776,11 @@ function openModal(name){
         {label:'Üzgün (%)',data:ordered.map(x=>+((x.sad||0)*100).toFixed(1)),backgroundColor:'#2563eb'},
         {label:'Nötr (%)',data:ordered.map(x=>+((x.neutral||0)*100).toFixed(1)),backgroundColor:'#9ca3af'}
       ]
-    },options:{responsive:true,maintainAspectRatio:false,plugins:{title:{display:true,text:'Gün Zamanına Göre Karşılaştırma'}},scales:{y:{beginAtZero:true,title:{display:true,text:'Oran (%)'}}}}});
+    },options:{responsive:true,maintainAspectRatio:false,plugins:{title:{display:true,text:'Gün Zamanına Göre Karşılaştırma'}},scales:{y:{beginAtZero:true,title:{display:true,text:'Oran (%)'}}}}}); 
   }
-
-  document.getElementById('cityModal').classList.add('open');
-  document.body.style.overflow='hidden';
 }
+
+
 function closeModal(){
   document.getElementById('cityModal').classList.remove('open');
   document.body.style.overflow='';
