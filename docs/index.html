@@ -102,9 +102,9 @@ body{background:radial-gradient(circle at top left,rgba(17,138,126,.10),transpar
 .emo-fill{height:100%;border-radius:4px;transition:width .4s}
 .emo-val{font-size:.78rem;font-weight:700;min-width:40px;text-align:right}
 /* CITY MODAL */
-.modal-overlay{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.55);z-index:1050;overflow-y:auto;-webkit-overflow-scrolling:touch;padding:20px;box-sizing:border-box}
+.modal-overlay{display:none;position:fixed;top:0;left:0;right:0;bottom:0;width:100vw;height:100vh;background:rgba(0,0,0,.55);z-index:9999;overflow-y:scroll;-webkit-overflow-scrolling:touch;padding:16px;box-sizing:border-box}
 .modal-overlay.open{display:flex}
-.modal-box{background:#fff;border-radius:20px;padding:28px;max-width:820px;width:100%;margin:20px auto;box-shadow:0 24px 60px rgba(0,0,0,.18);position:relative}
+.modal-box{background:#fff;border-radius:20px;padding:28px;max-width:820px;width:100%;margin:16px auto 40px;box-shadow:0 24px 60px rgba(0,0,0,.18);position:relative;min-height:auto}
 /* REPORT */
 .report-wrap{background:#fff;border-radius:16px;border:1px solid #e8eef5;padding:40px}
 .report-pre{background:#0f172a;color:#d1fae5;padding:24px;border-radius:16px;font-family:monospace;font-size:.82rem;line-height:1.7;white-space:pre-wrap;max-height:70vh;overflow-y:auto}
@@ -743,13 +743,23 @@ function openModal(name){
   }
 
   document.getElementById('cityModal').classList.add('open');
+  const scrollY = window.scrollY;
+  document.body.style.position='fixed';
+  document.body.style.top='-'+scrollY+'px';
+  document.body.style.left='0';
+  document.body.style.right='0';
   document.body.style.overflow='hidden';
-  document.documentElement.style.overflow='hidden';
+  document.body.dataset.scrollY = scrollY;
 }
 function closeModal(){
   document.getElementById('cityModal').classList.remove('open');
+  const sy = parseInt(document.body.dataset.scrollY||'0');
+  document.body.style.position='';
+  document.body.style.top='';
+  document.body.style.left='';
+  document.body.style.right='';
   document.body.style.overflow='';
-  document.documentElement.style.overflow='';
+  window.scrollTo(0, sy);
 }
 
 /* Şehir raporu indir */
